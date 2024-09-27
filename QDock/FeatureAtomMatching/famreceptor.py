@@ -3,6 +3,7 @@ import numpy as np
 
 class Receptor():
     def __init__(self,path,pdbqt_path):
+        #self.name = os.path.splitext(os.path.basename(path))[0]
         self.name = path.split("/")[-1].split(".")[-1]
         self.pdbqt_path = pdbqt_path
         self.make_pdbqt(path,self.pdbqt_path)

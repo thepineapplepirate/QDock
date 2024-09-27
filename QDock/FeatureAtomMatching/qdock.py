@@ -38,10 +38,14 @@ class FAMDock():
         return self.__step
     
     #Step 1, Prepare receptor file. 
+    #def make_receptor(self, receptor_path, destination_folder):
     def make_receptor(self,receptor_path):
+        #if os.path.splitext(receptor_path)[-1] != ".pdb":
         if receptor_path[-4:] != ".pdb":
             print("Receptor shoud be PDB format!")
             return
+        #receptor_name = os.path.splitext(os.path.basename(receptor_path))[0]
+        #self.receptor = Receptor(receptor_path, os.path.join(destination_folder, "{}.pdbqt".format(receptor_name)))
         self.receptor = Receptor(receptor_path,"receptor.pdbqt")
         self.receptor_autodock_atom_types = np.unique(
             self.receptor.autodock_atom_types)
