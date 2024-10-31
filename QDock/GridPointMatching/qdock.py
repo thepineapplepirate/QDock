@@ -20,10 +20,15 @@ from gpmreceptor import Receptor
 from gpmligand import Ligand
 from gpmgrid import Grid
 
+# Import Qiskit stuff
+from qiskit_optimization import QuadraticProgram
+from qiskit_optimization.converters import QuadraticProgramToQubo
+
 class GPMDock():
     def __init__(self):
         self.__step = "receptor"
-       
+        self.model_list = []
+    
     def get_step(self):
         return self.__step
     
@@ -101,7 +106,17 @@ class GPMDock():
                 pos = grid.pos[j]
                 van = grid.es[j]
                 weight = van
+                # How they're defining their binaries with PyQUBO
                 x = Binary("%d_%d_%5.5f"%(i,pos,weight))
+                # print("the binary variable is", x)
+                ##
+
+                # Trying to define them with Qiskit's modules instead:
+                # X = QuadraticProgram("QUBO on QC")
+                # x = X.binary_var_dict("%d_%d_%5.5f"%(i,pos,weight), key_format = {})
+                # print("the binary variable is", x)
+                ## end trying Qiskit version
+
                 Vs.append([x,i,pos,weight])
                 H += weight * x**2
         if len(Vs)*(len(Vs)-1)/2 > 100000000:
@@ -122,13 +137,21 @@ class GPMDock():
         H += K_dist * Constraint(C_dist, label='link') 
         H += K_mono * Constraint(C_mono, label='mono')
         model = H.compile()
+        self.model_list.append(model)
         qubo, offset = model.to_qubo() 
+        # ising = model.to_ising()
+        # #4.1.3, Save Ising Models
+        # if not os.path.exists("Isings"):
+        #     os.mkdir("Isings")
+        # np.save("Isings/%s.npy"%(ligand.name),ising)
+        
         #4.1.3, Save QUBO Models
         if not os.path.exists("QUBOs"):
             os.mkdir("QUBOs")
         if save_qubo:
             np.save("QUBOs/%s.npy"%(ligand.name),qubo)
         #4.2 Docking by PyQUBO simulator (simulated annealing)
+        ''''' this would instead be given to Qiskit '''''
         if not sim_dock:
             return 
         sampler = neal.SimulatedAnnealingSampler()
@@ -138,6 +161,8 @@ class GPMDock():
             #if sample not in samples:
                 samples.append(sample)
         #4.3, Convert matches back to docking pose
+        ''''' We would have to then convert the Qiskit result into the original format in order 
+              for the docking pose to be rebuilt from this ''''' 
         news = []
         match = []
         for sample in samples:
