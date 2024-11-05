@@ -1,0 +1,19 @@
+outlev 1
+npts 4 4 4
+gridfld 4jsz_protein.fld # avs field file
+spacing 2.00000
+receptor_types A C HD N NA OA SA
+ligand_types A C Cl HD N NA OA P S SA
+receptor receptor.pdbqt
+gridcenter 32.962 -1.363 12.843
+smooth 0.500000
+map Receptor.A.map
+map Receptor.C.map
+map Receptor.Cl.map
+map Receptor.HD.map
+map Receptor.N.map
+map Receptor.NA.map
+map Receptor.OA.map
+map Receptor.P.map
+map Receptor.S.map
+map Receptor.SA.map

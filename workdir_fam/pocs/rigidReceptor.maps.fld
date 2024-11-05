@@ -5,15 +5,15 @@
 # Created by /data/home/raubenb/ADFRsuite/bin/autogrid4 4.2.7.x.2019-07-11.
 #
 #SPACING 1.000
-#NELEMENTS 16 16 14
-#CENTER 56.217 73.499 20.476
+#NELEMENTS 10 10 12
+#CENTER 32.962 -1.363 12.843
 #MACROMOLECULE rigidReceptor.pdbqt
 #GRID_PARAMETER_FILE rigidReceptor.gpf
 #
 ndim=3			# number of dimensions in the field
-dim1=17			# number of x-elements
-dim2=17			# number of y-elements
-dim3=15			# number of z-elements
+dim1=11			# number of x-elements
+dim2=11			# number of y-elements
+dim3=13			# number of z-elements
 nspace=3		# number of physical coordinates per point
 veclen=5		# number of affinity values at each point
 data=float		# data type (byte, integer, float, double)

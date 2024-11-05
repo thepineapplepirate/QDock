@@ -1,0 +1,50 @@
+# Name: FB2
+# Created by ModelServer 0.9.12
+
+# model_server_result.job_id: 3I2Kab6d9UaIUK6ukGvxng
+# model_server_result.datetime_utc: 2024-11-05 14:31:31
+# model_server_result.server_version: 0.9.12
+# model_server_result.query_name: ligand
+# model_server_result.source_id: pdb-bcif
+# model_server_result.entry_id: 4jsz
+
+# model_server_params.name: atom_site
+# model_server_params.value: {"label_asym_id":"C","auth_seq_id":302}
+
+# model_server_stats.io_time_ms: 14
+# model_server_stats.parse_time_ms: 15
+# model_server_stats.create_model_time_ms: 4
+# model_server_stats.query_time_ms: 307
+# model_server_stats.encode_time_ms: 0
+# model_server_stats.element_count: 10
+
+@<TRIPOS>MOLECULE
+FB2
+10 10 1
+****
+****
+
+@<TRIPOS>ATOM
+1 C01 34.869 -2.135 10.878 C.ar 1 FB2 0.000
+2 C02 34.300 -3.081 11.728 C.ar 1 FB2 0.000
+3 C03 33.350 -2.690 12.690 C.ar 1 FB2 0.000
+4 C04 33.001 -1.319 12.821 C.ar 1 FB2 0.000
+5 C05 33.563 -0.367 11.965 C.ar 1 FB2 0.000
+6 C06 34.479 -0.789 10.982 C.ar 1 FB2 0.000
+7 S07 31.732 -0.853 14.103 S.o2 1 FB2 0.000
+8 O09 31.026 0.395 13.675 O.2 1 FB2 0.000
+9 O08 32.453 -0.646 15.491 O.2 1 FB2 0.000
+10 NP0 30.847 -2.146 14.095 N.pl3 1 FB2 0.000
+@<TRIPOS>BOND
+1 1 2 ar
+2 1 6 ar
+3 2 3 ar
+4 3 4 ar
+5 4 5 ar
+6 4 7 1
+7 5 6 ar
+8 7 9 2
+9 7 8 2
+10 7 10 1
+@<TRIPOS>SUBSTRUCTURE
+1 FB2 1

@@ -16,7 +16,7 @@
 #################################################################
 
 AutoSite v1.0.0 started on lri-ts-02 a Linux-3.10.0-1160.62.1.el7.x86_64-x86_64-with-centos-7.9.2009-Core computer
-Date Fri Sep 27 15:09:25 2024
+Date Tue Nov  5 11:40:08 2024
 computing maps ....
 clustering high affinity points ... 
 analysing 1 clusters ... 
@@ -25,5 +25,5 @@ saving 1 clusters and associated feature points in folder receptor
 clust.| Energy| # of |Rad. of | energy |   bns    |score   |Feature Points
 number|       |points|gyration|per vol.|buriedness|v*b^1.5 | D | A | Other
 ------+-------+------+--------+--------+----------+--------+---+---+------
-    1  -131.03   222    4.93    -0.59     0.951     40.65    9   7    9
-AutoSite identified and characterized 1 clusters in 0.61 seconds, i.e. 0 hours 00 minutes 00.611315 seconds 
+    1   -44.83   101    3.04    -0.44     0.858     24.46    3   1    5
+AutoSite identified and characterized 1 clusters in 0.24 seconds, i.e. 0 hours 00 minutes 00.235463 seconds 

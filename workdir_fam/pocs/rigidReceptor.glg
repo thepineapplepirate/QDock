@@ -58,7 +58,7 @@ Maximum number of maps that can be computed = 128 (defined by MAX_MAPS in "autoc
   Optimize internal energy scoring (USE_8A_NBCUTOFF):  yes
   Faster search for nearby atoms (USE_BHTREE):  yes
   Run calculations in parallel if possible (_OPENMP):  yes
-This file was created at:			3:09 25" p.m., 09/27/2024
+This file was created at:			11:40 08" a.m., 11/05/2024
                    using:			"lri-ts-02"
 
 
@@ -69,11 +69,11 @@ Output level: 1
 GPF> parameter_file AD4.1_bound.dat
 Using read_parameter_library() to try to open and read "AD4.1_bound.dat".
 
-GPF> npts 16 16 14
+GPF> npts 10 10 12
 
-Number of grid points in x-direction:	17
-Number of grid points in y-direction:	17
-Number of grid points in z-direction:	15
+Number of grid points in x-direction:	11
+Number of grid points in y-direction:	11
+Number of grid points in z-direction:	13
 
 GPF> gridfld rigidReceptor.maps.fld # avs field file
 
@@ -84,10 +84,10 @@ Creating (AVS-readable) grid-coordinates extrema file : rigidReceptor.maps.xyz
 GPF> spacing 1.000000
 Grid Spacing :			1.000 Angstrom
 
-GPF> receptor_types A C HD N OA SA 
+GPF> receptor_types A C HD N NA OA SA 
 GPF> ligand_types C OA HD 
 Allocated space for 6 gridmap objects
-15 CPU threads will be used for calculation
+13 CPU threads will be used for calculation
 
 Atom type names for ligand atom types 1-3 used for ligand-atom affinity grid maps:
 
@@ -104,62 +104,63 @@ Receptor Atom Type Assignments:
 
 
 Maximum partial atomic charge found = +0.665 e
-Minimum partial atomic charge found = -0.775 e
+Minimum partial atomic charge found = -0.648 e
 
 Atom	Atom	Number of this Type
 Type	 ID 	 in Receptor
 ____	____	___________________
- 0	 A		   192
- 1	 C		  1978
- 2	 HD		   741
- 3	 N		   586
- 4	 OA		   661
- 5	 SA		    18
+ 0	 A		   206
+ 1	 C		  1106
+ 2	 HD		   453
+ 3	 N		   349
+ 4	 NA		     1
+ 5	 OA		   380
+ 6	 SA		     3
 
-Total number of atoms :		4176 atoms 
-Total charge :			-21.86 e
+Total number of atoms :		2498 atoms 
+Total charge :			-0.91 e
 
 
 Receptor coordinates fit within the following volume:
 
-                   _______(91.1, 99.8, 69.7)
+                   _______(37.2, 22.9, 44.4)
                   /|     /|
                  / |    / |
                 /______/  |
-                |  |___|__| Midpoint = (59.6, 80.7, 33.8)
+                |  |___|__| Midpoint = (14.1, 0.5, 16.8)
                 |  /   |  /
                 | /    | /
                 |/_____|/
-(28.2, 61.7, -2.0)      
+(-9.1, -22.0, -10.7)      
 
-Maximum coordinates :		(91.058, 99.802, 69.654)
-Minimum coordinates :		(28.217, 61.669, -2.018)
+Maximum coordinates :		(37.186, 22.900, 44.409)
+Minimum coordinates :		(-9.072, -21.991, -10.717)
 
 
-GPF> gridcenter 56.217 73.499 20.476
+GPF> gridcenter 32.962 -1.363 12.843
 
 Grid maps will be centered on user-defined coordinates:
 
-		(56.217, 73.499, 20.476)
+		(32.962, -1.363, 12.843)
 
 Grid maps will cover the following volume:
 
-                   _______(64.2, 81.5, 27.5)
+                   _______(38.0, 3.6, 18.8)
                   /|     /|
                  / |    / |
                 /______/  |
-                |  |___|__| Midpoint = (56.2, 73.5, 20.5)
+                |  |___|__| Midpoint = (33.0, -1.4, 12.8)
                 |  /   |  /
                 | /    | /
                 |/_____|/
-(48.2, 65.5, 13.5)      
+(28.0, -6.4, 6.8)      
 
-Grid map x-dimension :		16.0 Angstroms
-Grid map y-dimension :		16.0 Angstroms
-Grid map z-dimension :		14.0 Angstroms
+Grid map x-dimension :		10.0 Angstroms
+Grid map y-dimension :		10.0 Angstroms
+Grid map z-dimension :		12.0 Angstroms
 
-Maximum coordinates :		(64.217, 81.499, 27.476)
-Minimum coordinates :		(48.217, 65.499, 13.476)
+Maximum coordinates :		(37.962, 3.637, 18.843)
+Minimum coordinates :		(27.962, -6.363, 6.843)
 
 GPF> smooth 0.500000
 
@@ -199,42 +200,40 @@ ________________________________________________________________________________
 Calculating Pairwise Interaction Energies
 Beginning grid calculations.
 
-Calculating 5 grids over 4335 elements, around 4176 receptor atoms.
+Calculating 5 grids over 1573 elements, around 2498 receptor atoms.
 
                     Percent   Estimated Time  Time/this plane
 XY-plane  Z-coord   Done      Remaining       Real, User, System
             /Ang              /sec            /sec
 ________  ________  ________  ______________  __________________________
 
-     -7     13.476     6.7%            0.28s  Real= 0.02,  CPU= 0.20,  System= 0.00
-     -6     14.476    13.3%            0.39s  Real= 0.03,  CPU= 0.25,  System= 0.00
-     -5     15.476    20.0%            0.12s  Real= 0.01,  CPU= 0.06,  System= 0.00
-     -4     16.476    26.7%            0.33s  Real= 0.03,  CPU= 0.26,  System= 0.00
-     -3     17.476    33.3%            0.30s  Real= 0.03,  CPU= 0.26,  System= 0.00
-     -2     18.476    40.0%            0.18s  Real= 0.02,  CPU= 0.05,  System= 0.00
-     -1     19.476    46.7%            0.16s  Real= 0.02,  CPU= 0.09,  System= 0.00
-      0     20.476    53.3%            0.21s  Real= 0.03,  CPU= 0.09,  System= 0.00
-      1     21.476    60.0%            0.18s  Real= 0.03,  CPU= 0.10,  System= 0.00
-      2     22.476    66.7%            0.05s  Real= 0.01,  CPU= 0.06,  System= 0.00
-      3     23.476    73.3%            0.08s  Real= 0.02,  CPU= 0.08,  System= 0.00
-      4     24.476    80.0%            0.06s  Real= 0.02,  CPU= 0.07,  System= 0.00
-      5     25.476    86.7%            0.04s  Real= 0.02,  CPU= 0.07,  System= 0.00
-      6     26.476    93.3%            0.01s  Real= 0.01,  CPU= 0.03,  System= 0.00
-      7     27.476   100.0%            0.00s  Real= 0.01,  CPU= 0.05,  System= 0.00
+     -6      6.843     7.7%            0.00s  Real= 0.00,  CPU= 0.04,  System= 0.01
+     -5      7.843    15.4%            0.00s  Real= 0.00,  CPU= 0.04,  System= 0.01
+     -4      8.843    23.1%            0.00s  Real= 0.00,  CPU= 0.05,  System= 0.01
+     -3      9.843    30.8%            0.00s  Real= 0.00,  CPU= 0.06,  System= 0.01
+     -2     10.843    38.5%            0.08s  Real= 0.01,  CPU= 0.03,  System= 0.00
+     -1     11.843    46.2%            0.07s  Real= 0.01,  CPU= 0.02,  System= 0.00
+      0     12.843    53.8%            0.06s  Real= 0.01,  CPU= 0.01,  System= 0.00
+      1     13.843    61.5%            0.00s  Real= 0.00,  CPU= 0.01,  System= 0.00
+      2     14.843    69.2%            0.00s  Real= 0.00,  CPU= 0.01,  System= 0.00
+      3     15.843    76.9%            0.00s  Real= 0.00,  CPU= 0.01,  System= 0.00
+      4     16.843    84.6%            0.00s  Real= 0.00,  CPU= 0.00,  System= 0.00
+      5     17.843    92.3%            0.00s  Real= 0.00,  CPU= 0.01,  System= 0.00
+      6     18.843   100.0%            0.00s  Real= 0.00,  CPU= 0.01,  System= 0.00
 
 Grid	Atom	Minimum   	Maximum
 Map 	Type	Energy    	Energy 
 		(kcal/mol)	(kcal/mol)
 ____	____	_____________	_____________
- 1	 C	   -0.85	 2.01e+05
- 2	 OA	   -1.40	 2.00e+05
- 3	 HD	   -0.71	 1.01e+05
- 4	 e	   -4.58	 1.42e+00	Electrostatic Potential
- 5	 d	    0.44	 1.50e+00	Desolvation Potential
+ 1	 C	   -0.82	 2.01e+05
+ 2	 OA	   -1.18	 2.00e+05
+ 3	 HD	   -0.65	 1.02e+05
+ 4	 e	   -4.32	 2.98e+00	Electrostatic Potential
+ 5	 d	    0.01	 1.49e+00	Desolvation Potential
 
 
  * Note:  Every pairwise-atomic interaction was clamped at 100000.00
 
 
 /data/home/raubenb/ADFRsuite/bin/autogrid4: Successful Completion.
-Real= 0.16s,  CPU= 0.61s,  System= 0.03s
+Real= 0.05s,  CPU= 0.14s,  System= 0.02s
