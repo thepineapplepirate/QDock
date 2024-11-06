@@ -61,3 +61,8 @@ exact_mes = NumPyMinimumEigensolver()
 qaoa = MinimumEigenOptimizer(qaoa_mes)  # using QAOA
 exact = MinimumEigenOptimizer(exact_mes)  # using the exact classical numpy minimum eigen solver
 
+exact_result = exact.solve(qubo)
+print(exact_result.prettyprint())
+
+qaoa_result = qaoa.solve(qubo)
+print(qaoa_result.prettyprint())
