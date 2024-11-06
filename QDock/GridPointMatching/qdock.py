@@ -115,7 +115,7 @@ class GPMDock():
                 # X = QuadraticProgram("QUBO on QC")
                 # x = X.binary_var_dict("%d_%d_%5.5f"%(i,pos,weight), key_format = {})
                 # print("the binary variable is", x)
-                ## end trying Qiskit version
+                # end trying Qiskit version
 
                 Vs.append([x,i,pos,weight])
                 H += weight * x**2
@@ -165,22 +165,26 @@ class GPMDock():
               for the docking pose to be rebuilt from this ''''' 
         news = []
         match = []
+        # each sample is probably a bit string
         for sample in samples:
             ls = []
             gs = []
             ws = []
             this_match = []
+            # this might mean that if x=1, then the bit is turned on and we want to add it
+            # so this for loop is just going through one bit string
             for info in filter(lambda x:1== x[1],sample.items()):
+                # this split is going to split the info into ijw (i=index, j=pos, w=weight)
                 i,j,w = info[0].split("_")
                 i = int(i)
                 j = int(j)
                 w = float(w)
-                ls.append(ligand.coords[i])
-                gs.append(self.box_coords[j])
-                ws.append(w)
+                ls.append(ligand.coords[i]) # coordinates for atom i on ligand
+                gs.append(self.box_coords[j]) # coordinates for atom j on protein
+                ws.append(w) # weight of interaction (if it exists) between atoms i and j
                 this_match.append(info[0])
             try:
-               ls = np.vstack(ls)
+               ls = np.vstack(ls) 
                gs = np.vstack(gs)
                match.append(copy.deepcopy(this_match))
             except:

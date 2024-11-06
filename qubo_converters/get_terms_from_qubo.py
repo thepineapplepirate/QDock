@@ -49,9 +49,14 @@ qubo.minimize(linear=linear_terms, quadratic=quadratic_dict)
 #qubo = QuadraticProgramToQubo().convert(qubo) #convert to QUBO
 print(qubo.prettyprint())
 print(qubo.export_as_lp_string())
-print('Number of qubits:', num_qubits)
-
+# print('Number of qubits:', num_qubits)
+print("the linear terms are:", linear_terms[0:10])
+print("the qubit names are:", qubit_names[0:10])
+print("the quadratic terms are:", list(quadratic_dict.keys())[0:10])
+# #print(quadratic_dict)
 
 qubit_op, offset = qubo.to_ising()
+
+print(qubit_op)
 
 
